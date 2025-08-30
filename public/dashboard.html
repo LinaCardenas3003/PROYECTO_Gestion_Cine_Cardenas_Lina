@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Acme - Dashboard</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script type="module" src="js/dashboard.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">Cine Acme</h1>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="peliculas.html" class="nav-link">Películas</a>
+            </nav>
+            <div class="user-actions">
+                <button class="btn-logout" id="logoutButton">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="main">
+        <div class="main-container">
+            <nav class="navbar">
+                <button class="btn-primary" id="adminBtn">
+                    Administrativos
+                </button>
+                <button class="btn-success" id="addCineBtn">
+                    Agregar Cine
+                </button>
+                <button class="btn-info" id="addPeliculaBtn">
+                    Agregar Película
+                </button>
+                <button class="btn-warning" id="reportsBtn">
+                    Reportes
+                </button>
+            </nav>
+            <div class="workspace">
+                <div id="cine-view">
+                    <h3>Lista de Cines</h3>
+                    <div class="cine-grid" id="cine-grid"></div>
+                </div>
+                <div id="admin-view" style="display: none;">
+                    <div class="admin-header">
+                        <h3>Lista de Administrativos</h3>
+                        <button class="btn-primary" id="registerAdminBtn">Registrar Administrativo</button>
+                    </div>
+                    <div id="admin-list"></div>
+                </div>
+                <div id="register-view" style="display: none;">
+                    <div class="admin-header">
+                        <h3>Registrar Administrativo</h3>
+                        <button class="btn-secondary" id="backToListBtn">Volver a la lista</button>
+                    </div>
+                    <div id="register-form-container"></div>
+                </div>
+                <div id="reports-view" style="display: none;">
+                    <div class="admin-header">
+                        <h3>Generar Reportes</h3>
+                        <button class="btn-secondary" id="backToMainBtn">Volver</button>
+                    </div>
+                    <div class="reports-container">
+                        <div class="report-card">
+                            <h4>Funciones Disponibles</h4>
+                            <p>Reporte de funciones disponibles por cine y película</p>
+                        <div class="report-form">
+                            <input type="text" id="cineIdFunciones" placeholder="ID del Cine" class="form-input">
+                            <input type="text" id="peliculaIdFunciones" placeholder="ID de la Película" class="form-input">
+                            <button class="btn-primary" id="generateFuncionesReport">Generar Reporte</button>
+                        </div>
+                        </div>
+                        <div class="report-card">
+                            <h4>Películas Vigentes</h4>
+                            <p>Reporte de películas con funciones vigentes por fecha y cine</p>
+                        <div class="report-form">
+                            <input type="date" id="fechaVigentes" class="form-input">
+                            <input type="text" id="cineIdVigentes" placeholder="ID del Cine" class="form-input">
+                            <button class="btn-primary" id="generateVigentesReport">Generar Reporte</button>
+                        </div>
+                        </div>
+                        <div class="report-card">
+                            <h4>Proyecciones por Rango</h4>
+                            <p>Reporte de películas proyectadas por rango de fecha</p>
+                            <div class="report-form">
+                                <input type="date" id="fechaInicioRango" class="form-input">
+                                <input type="date" id="fechaFinRango" class="form-input">
+                                <button class="btn-primary" id="generateRangoReport">Generar Reporte</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="report-results" style="display: none; margin-top: 20px;">
+                        <h4>Resultados del Reporte</h4>
+                        <div id="report-data"></div>
+                        <button class="btn-success" id="downloadReport" style="margin-top: 10px;">Descargar CSV</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

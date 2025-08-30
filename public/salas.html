@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Acme - Gestión de Salas</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/management.css">
+    <script type="module" src="js/salas.js"></script>
+</head>
+<body>
+    <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Cine Acme</h1>
+                <nav class="nav-menu">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="peliculas.html" class="nav-link">Películas</a>
+                </nav>
+                <div class="user-actions">
+                    <button onclick="window.location.href='index.html'" class="btn-logout">Cerrar Sesión</button>
+                </div>
+            </div>
+    </header>
+    <div class="main">
+        <div class="main-container">
+            <div class="workspace">
+                <div class="content-container">
+                    <div id="cineInfo" class="cine-info-header"></div>
+                    <div class="form-container">
+                        <h3>Agregar Nueva Sala</h3>
+                        <form id="salaForm">
+                            <div class="form-group">
+                                <label for="codigo">Código:</label>
+                                <input type="text" id="codigo" name="codigo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="numeroSillas">Número de Sillas:</label>
+                                <input type="number" id="numeroSillas" name="numeroSillas" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="login-btn">Agregar Sala</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="salaList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar sala -->
+    <div id="editSalaModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Sala</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="editSalaForm">
+                    <div class="form-group">
+                        <label for="editCodigo">Código:</label>
+                        <input type="text" id="editCodigo" name="codigo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editNumeroSillas">Número de Sillas:</label>
+                        <input type="number" id="editNumeroSillas" name="numeroSillas" required>
+                    </div>
+                    <div id="editError" class="error-message" style="display: none;"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="cancelEdit">Cancelar</button>
+                <button type="button" class="btn-primary" id="saveEdit">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

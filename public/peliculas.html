@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Acme - Gestión de Películas</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/management.css">
+    <script type="module" src="js/peliculas.js"></script>
+</head>
+<body>
+    <div class="main">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Cine Acme</h1>
+                <nav class="nav-menu">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="peliculas.html" class="nav-link">Películas</a>
+                </nav>
+                <div class="user-actions">
+                    <button onclick="window.location.href='index.html'" class="btn-logout">Cerrar Sesión</button>
+                </div>
+            </div>
+        </header>
+        <div class="main-container">
+            <div class="workspace">
+                <h3>Películas Creadas</h3>
+                <div class="movie-list" id="movie-list"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

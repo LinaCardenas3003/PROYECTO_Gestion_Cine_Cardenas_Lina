@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Acme - Detalles de Película</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/management.css">
+    <script type="module" src="js/peliculaDetalle.js"></script>
+</head>
+<body>
+    <div class="main">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Cine Acme</h1>
+                <nav class="nav-menu">
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="peliculas.html" class="nav-link">Películas</a>
+                </nav>
+                <div class="user-actions">
+                    <button onclick="window.location.href='index.html'" class="btn-logout">Cerrar Sesión</button>
+                </div>
+            </div>
+        </header>
+        <div class="main-container">
+            <div class="workspace">
+                <button onclick="window.location.href='peliculas.html'" class="btn-secondary" style="margin-bottom: 20px;">
+                    ← Volver a Películas
+                </button>
+                
+                <div id="movie-details-container">
+                    <div class="movie-details-loading">Cargando detalles de la película...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

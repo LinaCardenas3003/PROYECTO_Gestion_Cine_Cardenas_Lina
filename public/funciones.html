@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine Acme - Gestión de Funciones</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/management.css">
+    <script type="module" src="js/funciones.js"></script>
+</head>
+<body>
+    <div class="main">
+        <header class="header">
+        <div class="header-content">
+            <h1 class="logo">Cine Acme</h1>
+            <nav class="nav-menu">
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="peliculas.html" class="nav-link">Películas</a>
+            </nav>
+            <div class="user-actions">
+                <button onclick="window.location.href='index.html'" class="btn-logout">Cerrar Sesión</button>
+            </div>
+        </div>
+    </header>
+        <nav class="navbar">
+            <button class="btn-secondary" id="backButton">
+                Volver a Salas
+            </button>
+        </nav>
+        <div class="main-container">
+            <div class="content-container funciones-layout">
+                <div class="form-container">
+                    <h3>Agregar Nueva Función</h3>
+                    <form id="funcionForm">
+                        <div class="form-group">
+                            <label for="fecha">Fecha:</label>
+                            <input type="date" id="fecha" name="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="hora">Hora:</label>
+                            <input type="time" id="hora" name="hora" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pelicula">Película:</label>
+                            <select id="pelicula" name="pelicula" required>
+                                <option value="">Seleccionar película...</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="precio">Precio:</label>
+                            <input type="number" id="precio" name="precio" step="0.01" required>
+                        </div>
+                        <button type="submit" class="login-btn">Agregar Función</button>
+                    </form>
+                </div>
+                <div class="list-container">
+                    <div id="salaInfo"></div>
+                    <h3>Funciones Programadas</h3>
+                    <div id="funcionList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar función -->
+    <div id="editFuncionModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Función</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="editFuncionForm">
+                    <div class="form-group">
+                        <label for="editFecha">Fecha:</label>
+                        <input type="date" id="editFecha" name="fecha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editHora">Hora:</label>
+                        <input type="time" id="editHora" name="hora" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPelicula">Película:</label>
+                        <select id="editPelicula" name="pelicula" required>
+                            <option value="">Seleccionar película...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPrecio">Precio:</label>
+                        <input type="number" id="editPrecio" name="precio" step="0.01" required>
+                    </div>
+                    <div id="editError" class="error-message" style="display: none;"></div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" id="cancelEdit">Cancelar</button>
+                <button type="button" class="btn-primary" id="saveEdit">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
