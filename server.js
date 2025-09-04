@@ -3,6 +3,7 @@ import { MongoClient } from 'mongodb';
 import bcrypt from 'bcryptjs';
 import 'dotenv/config';
 import userRoute from './user.route.js';
+import clientRoute from './client.route.js';
 
 const app = express();
 
@@ -61,6 +62,7 @@ const createDefaultAdmin = async () => {
 await createDefaultAdmin();
 
 app.use('/user', userRoute(db));
+app.use('/client', clientRoute(db));
 
 app.get('/api/peliculas', async (req, res) => {
     try {
