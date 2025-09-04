@@ -1,3 +1,4 @@
+//dtos/client.dto.js
 export default class ClientDto {
     constructor(data) {
         this.identification = data.identification;

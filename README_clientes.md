@@ -20,6 +20,20 @@ Este documento describe el nuevo sistema de gestión de clientes y puntos de fid
   "email": "linaCardenas@mail.com",
   "phone": "3042322077"
 }
+
+{
+  "identification": "10002",
+  "fullName": "Camila Ortega",
+  "email": "camilaOrtega@mail.com",
+  "phone": "3015066088"
+}
+
+{
+  "identification": "10003",
+  "fullName": "Camilo Moreno",
+  "email": "camiloMoreno@mail.com",
+  "phone": "3107722037"
+}
 ```
 
 #### Obtener Todos los Clientes
